@@ -1,0 +1,24 @@
+.mainContact{
+    margin-top: 5%;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.contactIcons{
+    font-size: 34px;
+}
+.attributes{
+    margin: 5%;
+    text-align: center;
+    cursor: pointer;
+}
+.wrapper2{
+    text-align: center;
+}
+@media screen and (max-width:860px){
+    .wrapper{
+        display: block;
+        width: 100%;
+    }
+}

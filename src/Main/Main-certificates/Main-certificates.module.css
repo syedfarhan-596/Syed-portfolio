@@ -1,0 +1,19 @@
+.sliderWrapper{
+    margin-left: 20%;
+    width: 60%;
+}
+.slider {
+    box-sizing: border-box;
+}
+.sliderImg{
+    height: 80vh;
+}
+.btns{
+    font-size: 30px;
+}
+@media screen and (max-width:860px) {
+    .sliderWrapper{
+        width: 92%;
+        margin: 2%;
+    }
+}

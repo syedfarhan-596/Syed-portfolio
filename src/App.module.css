@@ -1,0 +1,39 @@
+.app{
+    position: relative;
+}
+.navMainWrapper{
+    width: 100%;
+    display: flex;
+}
+.appNavWrapper{
+    width:15%;
+}
+.appMainWrapper{
+    width: 83%;
+}
+.menu{
+    font-size:28px;
+    cursor: pointer;
+    display: none;
+    top: 0%;
+    left: 1%;
+    opacity: 0.2;
+}
+
+@media screen and (max-width:810px) {
+    .menu{
+        display: block;
+        position: fixed;
+    }
+    .menu:hover{
+        opacity: 0.9;
+    }
+
+}@media screen and (max-width:300px){
+    .appMainWrapper{
+        width: 100%;
+    }
+    .menu{
+        display: none;
+    }
+}

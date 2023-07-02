@@ -1,0 +1,9 @@
+.mainEducation{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    justify-content: space-around;
+}
+ul{
+    list-style: none;
+}
