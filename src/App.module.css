@@ -35,5 +35,14 @@
     }
     .menu{
         display: none;
+        width: 0%;
+    }
+}
+@media screen and (max-width:1000px) and (min-width:811px){
+    .appNavWrapper{
+        width:18%;
+    }
+    .appMainWrapper{
+        width: 80%;
     }
 }

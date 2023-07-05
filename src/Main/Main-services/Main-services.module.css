@@ -48,6 +48,6 @@
         grid-template-columns: auto auto;
     }
     .card{
-        height: 30vh;
+        height: max-content;
     }
 }

@@ -11,14 +11,15 @@ function App() {
     color:mode?"white":"black",
   }
   const widthStyle = {
-    width:"82%"
+    // width:"82%"
   }
   const widthStyle2 = {
     width:"100%"
   }
   const widthStyle3={
-    width:"18%",
     overflow:"hidden",
+    paddingRight:"2%",
+    marginRight:"2%"
   }
   const widthStyle4={
     width:"0%"
