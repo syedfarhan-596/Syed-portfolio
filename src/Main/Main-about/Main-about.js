@@ -13,7 +13,7 @@ const MainAbout = (props) => {
             <p style={{padding:"2%"}}>I am a dedicated frontend developer seeking to transition into a full stack role. With a strong foundation in front-end technologies, including HTML, CSS, JavaScript, and ReactJS, I am determined to expand my expertise to encompass backend development and database management. Committed to becoming a versatile and well-rounded full stack developer, I am eager to contribute to the end-to-end development of innovative web applications.</p>
           <div className={classes.flex}>
             <div className={classes.details} style={{width:"30%",margin:"2%",textAlign:"center"}}>
-                <p><span style={{fontWeight:"900"}}>Birth : </span>13 oct 2002</p><hr></hr>
+                <p><span style={{fontWeight:"900"}}>Birth : </span></p><hr></hr>
                 <p><span style={{fontWeight:"900"}}>Website : </span>NULL</p><hr></hr>
                 <p><span style={{fontWeight:"900"}}>Degree : </span>Diploma-CME</p><hr></hr>
                 <p><span style={{fontWeight:"900"}}>City : </span>Hyderabad</p><hr></hr>
