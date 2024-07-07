@@ -1,4 +1,6 @@
 import React from "react";
+import { useTheme } from "../../Theme";
+
 import {
   DiJavascript1,
   DiPython,
@@ -50,8 +52,15 @@ const skills = [
 ];
 
 const Skills = () => {
+  const { isDarkMode } = useTheme();
+
   return (
-    <section id="skills" className="py-12 bg-gray-100">
+    <section
+      id="skills"
+      className={`py-12 ${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">
           Technical Skills
@@ -60,7 +69,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-white text-gray-700 m-4 p-4 rounded-lg shadow-md flex flex-col items-center w-48"
+              className={`bg-white text-gray-700 m-4 p-4 rounded-lg shadow-md flex flex-col items-center w-48`}
             >
               {skill.icon}
               <span className="mt-4">{skill.name}</span>

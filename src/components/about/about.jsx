@@ -1,22 +1,29 @@
 import React from "react";
 import SyedImage from "../../assets/personal/syed.jpg";
 import ResumePdf from "../../assets/personal/SyedFarhan_resume.pdf";
+import { useTheme } from "../../Theme";
 
 const About = () => {
+  const { isDarkMode } = useTheme();
   const downloadResume = () => {
     window.open(ResumePdf, "_blank");
   };
 
   return (
-    <section id="about" className="py-12 bg-gray-100">
+    <section
+      id="about"
+      className={`py-12 ${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-4 md:mb-0">
             <img
               src={SyedImage}
               alt="Syed Farhan"
-              className="rounded-lg shadow-md object-contain "
-              style={{ maxHeight: "400px" }} // Adjust max height as needed
+              className="rounded-full shadow-md object-cover "
+              style={{ maxHeight: "400px", width: "100%" }}
             />
           </div>
           <div className="md:w-1/2 md:pl-8">
