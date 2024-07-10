@@ -6,6 +6,7 @@ import { CiLinkedin, CiInstagram } from "react-icons/ci";
 import { FaTelegram } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { useTheme } from "../../Theme";
+import axios from "axios";
 
 const schema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -16,11 +17,24 @@ const schema = z.object({
 const Contact = () => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    reset,
   } = useForm({
     resolver: zodResolver(schema),
   });
+
   const { isDarkMode } = useTheme();
+
+  const onSubmit = async (formData) => {
+    try {
+      await axios.post(process.env.REACT_APP_SEND_MAIL, formData);
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -37,6 +51,7 @@ const Contact = () => {
               method="POST"
               className=" p-6 rounded-lg shadow-md"
               data-netlify="true"
+              onSubmit={handleSubmit(onSubmit)}
             >
               <input type="hidden" name="form-name" value="contact" />
               <div className="mb-4">
@@ -110,12 +125,13 @@ const Contact = () => {
               </div>
               <div className="flex items-center justify-between">
                 <button
+                  disabled={isSubmitting}
                   className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
                     isDarkMode ? "hover:bg-blue-800" : "hover:bg-blue-600"
                   }`}
                   type="submit"
                 >
-                  Send Message
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </form>
